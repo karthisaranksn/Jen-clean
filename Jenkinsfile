@@ -9,8 +9,7 @@ pipeline{
         }
         stage('run clean up') {
             steps{
-                sh 'chmod +x cleanup.sh'
-                sh './cleanup.sh'
+                sh 'find /tmp/test_logs -type -f -mtime +7 -print -delete'
             }
         }
     }
