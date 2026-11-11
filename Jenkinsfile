@@ -9,6 +9,7 @@ pipeline{
         }
         stage('run clean up') {
             steps{
+                sh 'chmod +x cleanup.sh'
                 sh './cleanup.sh'
             }
         }
